@@ -13,6 +13,7 @@ def Svg_Line_Graph(array, xlabel, ylabel, whole_label, lines, crosses, x_increme
     #y_lineevery: number, how far apart between every graph paper line in y axis units
     #hours: boolean, set to true to use hours:minutes format. hours are the whole portion of the index number. mins are generated as the decimal place of the index multiplied by 60.
     #bg: boolean, set to true to add white background to resulting graphic
+    
     x_increment_by = Decimal(x_increment_by_decimal)
     x_increment_start = Decimal(x_increment_start_decimal)
     svg = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>"
@@ -53,7 +54,11 @@ def Svg_Line_Graph(array, xlabel, ylabel, whole_label, lines, crosses, x_increme
     #
     #
     #Use calculations to add incremental lines to graph
+    if y_lineevery==0:
+        y_lineevery=1
     y_inc = math.ceil(graph_friendly_range_y/y_lineevery)
+    if y_inc==0:
+        y_inc=1
     svg_graph_height = svg_y_boundaries[1]-svg_y_boundaries[0]
     svg_line_distance = svg_graph_height/y_inc
     #draw horizontal lines
