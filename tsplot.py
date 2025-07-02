@@ -52,9 +52,9 @@ def Svg_Line_Graph(array, xlabel, ylabel, whole_label, lines, crosses, x_increme
     graph_friendly_range_x = chart_plots * x_increment_by
     #
     if graph_friendly_range_y<1:
-        graph_friendly_range_y = 1
+        graph_friendly_range_y = Decimal(1)
     if graph_friendly_range_x<1:
-        graph_friendly_range_x = 1
+        graph_friendly_range_x = Decimal(1)
     #
     #
     #Use calculations to add incremental lines to graph
